@@ -142,19 +142,6 @@ LPcodedec compares these style features from both **Human** code and **LLM** cod
 
 ---
 
-## Conclusion & Future Directions
-
-The study provides key insights into detecting and attributing LLM-generated code. Key takeaways:
-
-1. **LPcodedec is highly effective at identifying paraphrased code, achieving superior performance with significantly faster execution time compared to traditional methods.**
-2. **Different programming languages exhibit varying levels of difficulty in LLM detection, with Java being the most distinguishable and Python being the most challenging.**
-3. **ChatGPT-generated code is relatively easier to detect due to its distinct comment style, whereas open-source models (WizardCoder, DeepSeek-Coder) require more nuanced analysis.**
-4. **Future research should explore more sophisticated feature engineering and deep learning approaches to further enhance paraphrasing detection and attribution accuracy.**
-
-These results demonstrate the potential of **stylistic analysis in LLM-generated code detection**, ensuring greater transparency and intellectual property protection in AI-assisted software development. 🚀
-
----
-
 ## Getting Started
 
 ### 1. Environment Setup
