@@ -107,7 +107,7 @@ LPcodedec compares these style features from both **Human** code and **LLM** cod
 
 ## Experimental Results
 
-### 🏆 Task 1: LLM Code Paraphrasing Detection Performance (Table 4)
+### 🏆 Task 1: LLM Code Paraphrasing Detection Performance 
 
 | Detection Method       | Execution Time (s) | F1-Score (C) | F1-Score (C++) | F1-Score (Java) | F1-Score (Python) |
 |------------------------|-------------------|--------------|---------------|----------------|----------------|
@@ -127,7 +127,7 @@ LPcodedec compares these style features from both **Human** code and **LLM** cod
 
 ---
 
-### 🏆 Task 2: LLM Provenance Tracking Performance (Table 6)
+### 🏆 Task 2: LLM Provenance Tracking Performance
 
 | Method     | F1-Score (C) | F1-Score (C++) | F1-Score (Java) | F1-Score (Python) |
 |------------|-------------|---------------|----------------|----------------|
@@ -139,11 +139,6 @@ LPcodedec compares these style features from both **Human** code and **LLM** cod
 - **TF-IDF struggles with accurately identifying the responsible LLM**, as it relies solely on token frequency patterns and does not account for stylistic changes.
 - **LPcodedec's success is due to its ability to leverage naming conventions, indentation consistency, and comment ratio** to differentiate between LLMs.
 - **Java exhibits the highest performance improvement**, suggesting that LLMs apply more distinct stylistic patterns when paraphrasing Java code compared to other languages.
-
-### 🔍 Additional Analysis: Error Trends
-- **ChatGPT paraphrased code was the easiest to detect**, as it exhibits more structured and consistent comment usage.
-- **WizardCoder and DeepSeek-Coder were often confused**, indicating that these LLMs generate similar code structures.
-- **Python showed lower accuracy compared to Java**, likely due to Python's inherent simplicity and the tendency of LLMs to produce similar patterns across different prompts.
 
 ---
 
