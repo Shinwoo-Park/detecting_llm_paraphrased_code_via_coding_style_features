@@ -109,15 +109,15 @@ LPcodedec compares these style features from both **Human** code and **LLM** cod
 
 ### 🏆 Task 1: LLM Code Paraphrasing Detection Performance 
 
-| Detection Method       | Execution Time (s) | F1-Score (C) | F1-Score (C++) | F1-Score (Java) | F1-Score (Python) |
-|------------------------|-------------------|--------------|---------------|----------------|----------------|
-| **LLM Embedding**     | 1210.76           | 63.00        | 66.36         | 68.20          | 50.78          |
-| **TF-IDF**            | 148.49            | 20.75        | 14.98         | 15.84          | 35.77          |
-| **Jaccard Similarity**| 0.11              | 68.30        | 70.82         | 72.38          | 73.05          |
-| **Levenshtein Distance** | 742.20        | 64.27        | 71.42         | 71.42          | 71.86          |
-| **MOSS**              | 1261.32           | 66.81        | 69.17         | 72.37          | 68.41          |
-| **Tree Edit Distance** | 1094.11           | 88.06        | 87.71         | 88.20          | 86.95          |
-| **LPcodedec (Proposed)** | **1.59**        | **87.52**    | **88.39**     | **91.13**      | **93.16**      |
+| Detection Method       | F1-Score (C) | F1-Score (C++) | F1-Score (Java) | F1-Score (Python) |
+|------------------------|--------------|---------------|----------------|----------------|
+| **LLM Embedding**     | 63.00        | 66.36         | 68.20          | 50.78          |
+| **TF-IDF**            | 20.75        | 14.98         | 15.84          | 35.77          |
+| **Jaccard Similarity**| 68.30        | 70.82         | 72.38          | 73.05          |
+| **Levenshtein Distance** | 64.27        | 71.42         | 71.42          | 71.86          |
+| **MOSS**              | 66.81        | 69.17         | 72.37          | 68.41          |
+| **Tree Edit Distance** | 88.06        | 87.71         | 88.20          | 86.95          |
+| **LPcodedec (Proposed)** | **87.52**    | **88.39**     | **91.13**      | **93.16**      |
 
 **Key Findings:**
 - **LPcodedec outperforms all other methods in terms of accuracy**, achieving the highest F1-score in all programming languages.
